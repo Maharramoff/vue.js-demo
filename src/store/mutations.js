@@ -1,6 +1,4 @@
-/**
- * Created by ADMIN on 04.02.2018.
- */
+
 export const mutations = {
     setUser (state, payload) {
         state.user = payload
