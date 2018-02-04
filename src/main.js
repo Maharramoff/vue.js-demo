@@ -17,6 +17,15 @@ Vue.config.productionTip = false;
 
 firebase.initializeApp(firebaseConfig);
 
+Vue.mixin({
+    methods: {
+        __someGlobalFunction: function(str, type)
+        {
+            //return this.$lang.labels.str;
+        }
+    }
+})
+
 /* eslint-disable no-new */
 new Vue({
     el     : '#app',

@@ -8,6 +8,7 @@ module.exports = {
     btn_sign_in   : 'Daxil ol',
     sign_up       : 'Qeyd Ol',
     btn_sign_up   : 'Qeydiyyat',
+    btn_clear     : 'Təmizlə',
     home          : 'Baş səhifə',
     password_label: 'Baş səhifə',
     email_label   : 'Baş səhifə',
