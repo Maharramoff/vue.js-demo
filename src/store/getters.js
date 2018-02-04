@@ -4,6 +4,21 @@
 export const getters = {
     appTitle (state) {
         return state.appTitle
+    },    
+    welcomeTitle (state) {
+        return state.welcomeTitle
+    },
+    homeTitle (state) {
+        return state.homeTitle
+    },
+    signupTitle (state) {
+        return state.signupTitle
+    },
+    signinTitle (state) {
+        return state.signinTitle
+    },
+    madeWith (state) {
+        return state.madeWith
     },
     getUser (state) {
         return state.user

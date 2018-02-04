@@ -1,22 +1,30 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import App from './App'
 import router from './router'
-import { store } from './store'
+import {store} from './store'
 import firebase from 'firebase'
-import { firebaseConfig } from './config'
+import {firebaseConfig, appConfig} from './config'
 
-Vue.use(Vuetify)
-Vue.config.productionTip = false
+// Dil paketi üçün
+var Lang = require('vuejs-localization');
+Lang.requireAll(require.context('./lng', true, /\.js$/));
+Vue.use(Lang);
 
-firebase.initializeApp(firebaseConfig)
+// Vuetify frontend framework
+Vue.use(Vuetify);
+Vue.config.productionTip = false;
+
+firebase.initializeApp(firebaseConfig);
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
-})
+    el     : '#app',
+    router,
+    store,
+    render : h => h(App),
+    created: function ()
+    {
+        this.$lang.setLang(appConfig.defaultLang)
+    }
+});

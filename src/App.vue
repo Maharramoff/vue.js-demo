@@ -15,14 +15,14 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar fixed app>
+    <v-toolbar color="amber" fixed app>
       <span class="hidden-sm-and-up">
         <v-toolbar-side-icon @click.stop="sidebar = !sidebar">
         </v-toolbar-side-icon>
       </span>
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
-          {{ appTitle }}
+          {{$lang.titles.app_title}}
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -53,12 +53,11 @@
   export default {
     data () {
       return {
-        appTitle: 'Awesome App',
         sidebar: false,
         menuItems: [
-          { title: 'Home', path: '/home', icon: 'home' },
-          { title: 'Sign Up', path: '/signup', icon: 'face' },
-          { title: 'Sign In', path: '/signin', icon: 'lock_open' }
+          { title: this.$lang.titles.home, path: '/home', icon: 'home' },
+          { title: this.$lang.titles.sign_up, path: '/signup', icon: 'face' },
+          { title: this.$lang.titles.sign_in, path: '/signin', icon: 'lock_open' }
         ]
       }
     }
