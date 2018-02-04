@@ -1,3 +1,5 @@
+[ ![Codeship Status for Maharramoff/vue-demo-aze](https://app.codeship.com/projects/3b6d6230-ebc6-0135-a309-3e260d7a1584/status?branch=master)](https://app.codeship.com/projects/270250)
+
 # demo-aze
 
 > A Vue.js project
