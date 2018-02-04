@@ -9,7 +9,7 @@ const serveStatic = require('serve-static');
 
 let app = express();
 app.use(history());
-//app.use(serveStatic(__dirname + "/dist"));
+app.use(serveStatic(__dirname + "/dist"));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
