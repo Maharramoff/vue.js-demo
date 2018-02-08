@@ -1,7 +1,14 @@
 <template>
     <v-layout column class="text-xs-center">
         <v-flex xs12 mt-5>
-            <h3>{{$lang.titles.welcome_title}}</h3>
+            <ul>
+                <li>
+                    {{ __getUser().displayName}}
+                </li>
+            </ul>
+        </v-flex>
+        <v-flex xs12 mt-5>
+            <h2>{{$lang.titles.welcome_title}}</h2>
         </v-flex>
         <v-flex xs12 sm6 offset-sm3 mt-3>
             <blockquote>

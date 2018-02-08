@@ -6,6 +6,7 @@ export const state = {
     user    : null,
     error   : null,
     loading : false,
+    appLang : null,
     welcomeTitle : 'Kod paylaşımı proqramına xoş gəlmisiniz',
     madeWith : 'Layihə Vue.js-lə hazırlanıb',
 }
