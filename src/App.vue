@@ -12,6 +12,12 @@
                     </v-list-tile-action>
                     <v-list-tile-content>{{ item.title }}</v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile @click="__userLogout" v-if="__isUser()">
+                    <v-list-tile-action>
+                        <v-icon>exit_to_app</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>{{$lang.titles.sign_out}}</v-list-tile-content>
+                </v-list-tile>
             </v-list>
         </v-navigation-drawer>
 
@@ -22,7 +28,7 @@
       </span>
             <v-toolbar-title>
                 <router-link to="/" tag="span" style="cursor: pointer">
-                    {{$lang.titles.app_title}} {{ __getUser().displayName}}
+                    {{$lang.titles.app_title}}
                 </router-link>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -34,6 +40,10 @@
                         :to="item.path">
                     <v-icon left>{{ item.icon }}</v-icon>
                     {{ item.title }}
+                </v-btn>
+                <v-btn flat @click="__userLogout" v-if="__isUser()">
+                    <v-icon left>exit_to_app</v-icon>
+                    {{$lang.titles.sign_out}}
                 </v-btn>
             </v-toolbar-items>
         </v-toolbar>
@@ -54,12 +64,12 @@
     export default {
         data () {
             return {
-                sidebar  : false,
-/*                menuItems: [
-                    {title: this.$lang.titles.home, path: '/home', icon: 'home'},
-                    {title: this.$lang.titles.sign_up, path: '/signup', icon: 'face'},
-                    {title: this.$lang.titles.sign_in, path: '/signin', icon: 'lock_open'}
-                ]*/
+                sidebar: false,
+                /*                menuItems: [
+                 {title: this.$lang.titles.home, path: '/home', icon: 'home'},
+                 {title: this.$lang.titles.sign_up, path: '/signup', icon: 'face'},
+                 {title: this.$lang.titles.sign_in, path: '/signin', icon: 'lock_open'}
+                 ]*/
             }
         },
         created()
@@ -81,6 +91,11 @@
                         {title: this.$lang.titles.sign_in, path: '/signin', icon: 'lock_open'}
                     ]
                 }
+            }
+        },
+        methods : {
+            __userLogout () {
+                this.$store.dispatch('userLogout')
             }
         }
     }

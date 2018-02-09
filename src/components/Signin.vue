@@ -3,13 +3,6 @@
         <v-flex xs12 class="text-xs-center" mt-5>
             <h2>{{$lang.titles.sign_in_title}}</h2>
         </v-flex>
-        <v-flex xs12 mt-5>
-            <ul>
-                <li>
-                    {{ __getUser().displayName}}
-                </li>
-            </ul>
-        </v-flex>
         <v-flex xs12 sm6 offset-sm3 mt-3>
             <form>
                 <v-layout column>

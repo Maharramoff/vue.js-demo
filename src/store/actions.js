@@ -53,7 +53,7 @@ export const actions = {
     {
         commit('setUser', payload)
     },
-    userSignOut ({commit})
+    userLogout ({commit})
     {
         firebase.auth().signOut()
         commit('setUser', null)

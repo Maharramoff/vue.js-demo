@@ -13,4 +13,5 @@ module.exports = {
     password_label: 'Baş səhifə',
     email_label   : 'Baş səhifə',
     btn_loading   : 'Qeydiyyat...',
+    sign_out      : 'Çıxış',
 };

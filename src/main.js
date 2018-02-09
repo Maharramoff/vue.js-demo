@@ -29,7 +29,7 @@ Vue.mixin({
         },
         __isUser: function ()
         {
-            return this.__getUser().uid || false
+            return this.__getUser() ? this.__getUser().uid : false
         }
     }
 })
