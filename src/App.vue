@@ -1,5 +1,5 @@
 <template>
-    <v-app :lang="$lang.getLang()" style="font-family: Space Mono,monospace;">
+    <v-app :lang="$lang.getLang()" style="font-family: Space Mono, monospace, Courier new, Courier;">
 
         <v-navigation-drawer fixed temporary v-model="sidebar" app>
             <v-list>
