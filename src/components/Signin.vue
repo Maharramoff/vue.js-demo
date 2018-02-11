@@ -4,14 +4,20 @@
             <h2>{{$lang.titles.sign_in_title}}</h2>
         </v-flex>
         <v-flex xs12 sm6 offset-sm3 mt-3>
-            <form>
+            <form @submit.prevent="userSignIn">
                 <v-layout column>
+                    <v-flex>
+                        <v-alert error dismissible v-model="alert">
+                            {{ error }}
+                        </v-alert>
+                    </v-flex>
                     <v-flex>
                         <v-text-field
                                 name="email"
                                 :label="$lang.labels.email_label"
                                 id="email"
                                 type="email"
+                                v-model="email"
                                 required></v-text-field>
                     </v-flex>
                     <v-flex>
@@ -20,10 +26,18 @@
                                 :label="$lang.labels.password_label"
                                 id="password"
                                 type="password"
+                                v-model="password"
                                 required></v-text-field>
                     </v-flex>
                     <v-flex class="text-xs-center" mt-5>
-                        <v-btn color="primary" type="submit">{{$lang.titles.btn_sign_in}}</v-btn>
+                        <v-btn
+                                color="primary"
+                                type="submit"
+                                @click.native="loader = 'loading2'"
+                                :loading="loading"
+                                :disabled="loading"
+                        >{{$lang.titles.btn_sign_in}}
+                        </v-btn>
                     </v-flex>
                 </v-layout>
             </form>
@@ -32,5 +46,53 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        data () {
+            return {
+                email   : '',
+                password: '',
+                alert   : false,
+                lang    : this.$lang.msg,
+                loader  : null,
+                loading2: false,
+            }
+        },
+        computed: {
+            error () {
+                return this.$store.getters.getError
+            },
+            loading () {
+                return this.$store.getters.getLoading
+            }
+        },
+        watch   : {
+            error (value) {
+                if (value)
+                {
+                    this.alert = true
+                }
+            },
+            alert (value) {
+                if (!value)
+                {
+                    //this.$store.dispatch('setError', false)
+                    this.loader = null
+                }
+            }
+        },
+        methods : {
+            userSignIn () {
+
+                this.$store.commit('setLoading', true)
+
+                setTimeout(() => (
+                        this.$store.dispatch('userSignIn', {
+                            email   : this.email,
+                            password: this.password,
+                            lang    : this.lang
+                        })
+                ), 3000)
+            }
+        }
+    }
 </script>

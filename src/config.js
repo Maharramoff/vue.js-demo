@@ -1,6 +1,4 @@
-/**
- * Created by ADMIN on 04.02.2018.
- */
+import firebase from 'firebase'
 
 const firebaseConfig = {
     apiKey           : "AIzaSyAU86DDZcod-x37bueJuhIa0Kp9UJj_r_k",
@@ -12,10 +10,14 @@ const firebaseConfig = {
 };
 
 const appConfig = {
-    defaultLang : "az"
+    defaultLang: "az"
 };
 
+const fb = firebase.initializeApp(firebaseConfig);
+const db  = fb.database();
 export {
-  firebaseConfig,
-  appConfig
+    firebaseConfig,
+    appConfig,
+    db,
+    fb
 }

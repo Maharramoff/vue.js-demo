@@ -1,14 +1,14 @@
-import firebase from 'firebase'
+//import firebase from 'firebase'
 import router from '@/router'
+import {fb, db} from '../config'
+
+const notesRef = db.ref('notes');
 
 export const actions = {
     userSignUp ({commit}, data)
     {
-        // Dil paketi üçün
-        //var Lang = require('../lng/' + data.lang + '/msg')
-
-        //commit('setLoading', true)
-        firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
+        
+        fb.auth().createUserWithEmailAndPassword(data.email, data.password)
             .then(firebaseUser =>
             {
                 firebaseUser.updateProfile({
@@ -32,10 +32,9 @@ export const actions = {
                 commit('setLoading', false)
             })
     },
-    userSignIn ({commit}, payload)
+    userSignIn ({commit}, data)
     {
-        commit('setLoading', true)
-        firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
+        fb.auth().signInWithEmailAndPassword(data.email, data.password)
             .then(firebaseUser =>
             {
                 commit('setUser', firebaseUser)
@@ -45,7 +44,7 @@ export const actions = {
             })
             .catch(error =>
             {
-                commit('setError', error.message)
+                commit('setError', data.lang[error.code.split("/")[1]])
                 commit('setLoading', false)
             })
     },
@@ -55,8 +54,21 @@ export const actions = {
     },
     userLogout ({commit})
     {
-        firebase.auth().signOut()
+        fb.auth().signOut()
         commit('setUser', null)
         router.push('/')
+    },
+    // Notes
+    noteAdd ({commit}, data)
+    {
+        notesRef.push(data)
+
+        notesRef.on('value', (snapshot) =>
+        {
+            let notes = snapshot.val()
+            console.log(notes)
+            //window.alert(notes[0].title)
+        })
     }
+
 }

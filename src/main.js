@@ -3,8 +3,11 @@ import Vuetify from 'vuetify'
 import App from './App'
 import router from './router'
 import {store} from './store'
-import firebase from 'firebase'
-import {firebaseConfig, appConfig} from './config'
+import {appConfig, fb, db} from './config'
+import Vuefire from 'vuefire'
+
+// DB üçün
+Vue.use(Vuefire);
 
 // Dil paketi üçün
 var Lang = require('vuejs-localization');
@@ -15,19 +18,17 @@ Vue.use(Lang);
 Vue.use(Vuetify);
 Vue.config.productionTip = false;
 
-firebase.initializeApp(firebaseConfig);
-
 Vue.mixin({
     methods: {
         __someGlobalFunction: function (str, type)
         {
             //return this.$lang.labels.str;
         },
-        __getUser: function ()
+        __getUser           : function ()
         {
-            return firebase.auth().currentUser
+            return fb.auth().currentUser
         },
-        __isUser: function ()
+        __isUser            : function ()
         {
             return this.__getUser() ? this.__getUser().uid : false
         }
@@ -35,7 +36,7 @@ Vue.mixin({
 })
 
 /* eslint-disable no-new */
-const initApp = firebase.auth()
+const initApp = fb.auth()
     .onAuthStateChanged((firebaseUser) =>
     {
         new Vue({
@@ -44,18 +45,17 @@ const initApp = firebase.auth()
             store,
             render: h => h(App),
             created () {
-                //store.commit('setLang', appConfig.defaultLang)
+
                 this.$lang.setLang(appConfig.defaultLang);
 
-                firebase.auth().onAuthStateChanged((firebaseUser) =>
+                if (firebaseUser)
                 {
-                    if (firebaseUser)
-                    {
-                        store.dispatch('autoSignIn', firebaseUser)
-                        //this.$store.state.user = firebase.auth().currentUser
-                    }
-                })
+
+                    store.dispatch('autoSignIn', firebaseUser)
+                    store.dispatch('noteAdd', {title: 'Hello world', content: 'Lorem ipsum'})
+                    //this.$store.state.user = firebase.auth().currentUser
+                }
             }
-        })
+        });
         initApp()
-    })
+    });

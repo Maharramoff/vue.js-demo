@@ -141,8 +141,7 @@
             error()
             {
                 return this.$store.getters.getError
-            }
-            ,
+            },
             loading()
             {
                 return this.$store.getters.getLoading

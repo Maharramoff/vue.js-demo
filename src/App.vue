@@ -1,5 +1,5 @@
 <template>
-    <v-app :lang="$lang.getLang()" style="font-family: monospace;">
+    <v-app :lang="$lang.getLang()" style="font-family: Space Mono,monospace;">
 
         <v-navigation-drawer fixed temporary v-model="sidebar" app>
             <v-list>
@@ -60,25 +60,20 @@
 </template>
 
 <script>
-    //import firebase from 'firebase'
     export default {
         data () {
             return {
-                sidebar: false,
-                /*                menuItems: [
-                 {title: this.$lang.titles.home, path: '/home', icon: 'home'},
-                 {title: this.$lang.titles.sign_up, path: '/signup', icon: 'face'},
-                 {title: this.$lang.titles.sign_in, path: '/signin', icon: 'lock_open'}
-                 ]*/
+                sidebar: false
             }
         },
         created()
         {
+            //this.$store.dispatch('noteAdd')
         },
         computed: {
             menuItems ()
             {
-                if (this.__isUser())
+                if (this.userIsAuthenticated)
                 {
                     return [
                         {title: this.$lang.titles.home, path: '/home', icon: 'home'}
@@ -91,6 +86,9 @@
                         {title: this.$lang.titles.sign_in, path: '/signin', icon: 'lock_open'}
                     ]
                 }
+            },
+            userIsAuthenticated () {
+                return this.$store.getters.getUser !== null
             }
         },
         methods : {
