@@ -1,7 +1,7 @@
 module.exports = {
-    app_title     : 'Kod paylaşımı proqramı',
-    welcome_title : 'Kod paylaşımı proqramına xoş gəlmisiniz',
-    made_with     : 'Layihə Vue.js-lə hazırlanıb',
+    app_title     : 'Demo layihə',
+    welcome_title : 'Layihə Vue.js-lə hazırlanıb',
+    made_with     : 'İstifadə olunan texnologiyalar: Backend/Node.js, NoSQL/Firebase, PaaS/Heroku, CI/Codeship, Frontend/Vuetify',
     sign_in_title : 'Sistemə giriş',
     sign_up_title : 'Sistemdə qeydiyyat',
     sign_in       : 'Daxil Ol',

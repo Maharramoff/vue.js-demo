@@ -3,7 +3,7 @@
         <v-flex xs12 class="text-xs-center" mt-5>
             <h2>{{$lang.titles.sign_in_title}}</h2>
         </v-flex>
-        <v-flex flex xs12 sm10 lg6 offset-xs0 offset-sm1 offset-lg3 mt-3 mt-3>
+        <v-flex flex xs12 sm10 lg6 offset-xs0 offset-sm1 offset-lg3 mt-3>
             <form @submit.prevent="userSignIn">
                 <v-layout column>
                     <v-flex>
