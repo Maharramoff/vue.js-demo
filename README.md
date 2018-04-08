@@ -3,10 +3,9 @@
 
 #### A Simple Vue 2 + 🔥 Firebase Boilerplate 
 #### Work in progress 🔥 :sunglasses: <img width="16px" src="https://lipis.github.io/flag-icon-css/flags/4x3/az.svg">
-#### Supported Browsers
-<p>
-  <a href="https://saucelabs.com/u/vuejs"><img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status"></a>
-</p>
+
+#### Live DEMO
+Check a live Demo here https://vue-demo-aze.herokuapp.com/
 
 #### Based on
 <table>
