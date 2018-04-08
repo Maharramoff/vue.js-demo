@@ -56,7 +56,7 @@ export const actions = {
     {
         fb.auth().signOut()
         commit('setUser', null)
-        router.push('/')
+        router.push('/home')
     },
     // Notes
     noteAdd ({commit}, data)

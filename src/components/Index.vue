@@ -8,9 +8,15 @@
                 {{$lang.titles.made_with}}
             </blockquote>
         </v-flex>
+
         <v-flex mt-5>
-            <v-btn flat color="primary" to="/signup">{{$lang.titles.sign_up}}</v-btn>
-            <v-btn flat to="/signin">{{$lang.titles.sign_in}}</v-btn>
+            <div v-if="__isUser()">
+                User logged in
+            </div>
+            <div v-else>
+                <v-btn flat color="primary" to="/signup">{{$lang.titles.sign_up}}</v-btn>
+                <v-btn flat to="/signin">{{$lang.titles.sign_in}}</v-btn>
+            </div>
         </v-flex>
     </v-layout>
 </template>
