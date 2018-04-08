@@ -30,7 +30,7 @@
         </a>
       </td>
     </tr>
-    <tr><td></td><td></td><td></td></tr>
+    <tr><td>Firebase</td><td>Node.js</td><td>Vuetify</td></tr>
   </tbody>
 </table>
 
