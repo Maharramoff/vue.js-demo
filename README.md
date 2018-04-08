@@ -1,7 +1,7 @@
 [ ![Codeship Status for Maharramoff/vue-demo-aze](https://app.codeship.com/projects/3b6d6230-ebc6-0135-a309-3e260d7a1584/status?branch=master)](https://app.codeship.com/projects/270250)
 
-# A Simple Vue 2 + 🔥 Firebase Boilerplate
-# 🔥 Work in progress
+#### A Simple Vue 2 + 🔥 Firebase Boilerplate
+#### 🔥 Work in progress
 
 <p><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://vuejs.org/images/logo.png" alt="Vue logo"></a></p>
 
@@ -9,7 +9,7 @@
   <a href="https://saucelabs.com/u/vuejs"><img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status"></a>
 </p>
 
-<h4>Based on</h4>
+#### Based on
 <table>
   <tbody>
     <tr>
@@ -34,7 +34,7 @@
 </table>
 
 
-# Build Setup
+#### Build Setup
 
 ``` bash
 # install dependencies
