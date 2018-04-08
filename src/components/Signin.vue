@@ -4,7 +4,7 @@
             <h2>{{$lang.titles.sign_in_title}}</h2>
         </v-flex>
         <v-flex flex xs12 sm10 lg6 offset-xs0 offset-sm1 offset-lg3 mt-3>
-            <form @submit.prevent="userSignIn">
+            <v-form ref="form" @submit.prevent="userSignIn">
                 <v-layout column>
                     <v-flex>
                         <v-alert error dismissible v-model="alert">
@@ -40,7 +40,7 @@
                     <v-flex class="text-xs-center" mt-5>
                         <v-btn
                                 color="primary"
-                                type="submit"
+                                @click="submit"
                                 @click.native="loader = 'loading2'"
                                 :loading="loading"
                                 :disabled="loading"
@@ -48,7 +48,7 @@
                         </v-btn>
                     </v-flex>
                 </v-layout>
-            </form>
+            </v-form>
         </v-flex>
     </v-layout>
 </template>
@@ -60,7 +60,7 @@
         mixins     : [validationMixin],
         validations: {
             email   : {required, email},
-            password: required
+            password: {required}
         },
         data () {
             return {
@@ -108,19 +108,23 @@
             }
         },
         methods    : {
-            userSignIn () {
+            submit () {
 
                 this.$v.$touch()
 
-                this.$store.commit('setLoading', true)
+                if (!this.$v.$error)
+                {
 
-                setTimeout(() => (
-                        this.$store.dispatch('userSignIn', {
-                            email   : this.email,
-                            password: this.password,
-                            lang    : this.lang
-                        })
-                ), 3000)
+                    this.$store.commit('setLoading', true)
+
+                    setTimeout(() => (
+                            this.$store.dispatch('userSignIn', {
+                                email   : this.email,
+                                password: this.password,
+                                lang    : this.lang
+                            })
+                    ), 3000)
+                }
             }
         }
     }
