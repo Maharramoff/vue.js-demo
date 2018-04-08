@@ -1,13 +1,11 @@
 [ ![Codeship Status for Maharramoff/vue-demo-aze](https://app.codeship.com/projects/3b6d6230-ebc6-0135-a309-3e260d7a1584/status?branch=master)](https://app.codeship.com/projects/270250)
 [ ![Heroku Status for vue-demo-aze](https://heroku-badge.herokuapp.com/?app=vue-demo-aze)](https://vue-demo-aze.herokuapp.com/)
 
-#### A Simple Vue 2 + 🔥 Firebase Boilerplate
-#### Work in progress 🔥
+#### A Simple Vue 2 + 🔥 Firebase Boilerplate 
+#### Work in progress 🔥 :sunglasses: <img width="16px" src="https://lipis.github.io/flag-icon-css/flags/4x3/az.svg">
 
-#### Supported Browsers
-<p>
-  <a href="https://saucelabs.com/u/vuejs"><img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status"></a>
-</p>
+#### Live DEMO
+Check a live Demo here https://vue-demo-aze.herokuapp.com/
 
 #### Based on
 <table>
@@ -15,7 +13,7 @@
     <tr>
       <td align="center" valign="middle">
         <a href="https://vuejs.org" target="_blank">
-          <img width="64px" src="https://vuejs.org/images/logo.png">
+          <img width="64px" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/vue/vue.png">
         </a>
       </td>
       <td align="center" valign="middle">
@@ -37,6 +35,19 @@
     <tr><td>Vue.js</td><td>Firebase</td><td>Node.js</td><td>Vuetify</td></tr>
   </tbody>
 </table>
+
+#### Initialize Firebase
+⚠️ Be sure to set your Firebase connection at `/src/config.js`. 
+```javascript
+  var config = {
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
+  };
+```
+For details check out the [Documentation](https://firebase.google.com/docs/web/setup?authuser=0)
 
 #### Build Setup
 
