@@ -15,17 +15,17 @@
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        <a href="https://laravel.com" target="_blank">
+        <a href="https://firebase.google.com" target="_blank">
           <img width="64px" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/firebase/firebase.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://htmlburger.com" target="_blank">
+        <a href="https://nodejs.org" target="_blank">
           <img width="64px" src="https://raw.githubusercontent.com/github/explore/fd96fceccf8c42c99cbe29cf0f8dcc4736fcb85a/topics/nodejs/nodejs.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://chaitin.cn/en/" target="_blank">
+        <a href="https://vuetifyjs.com" target="_blank">
           <img width="64px" src="https://vuetifyjs.com/static/doc-images/logo.svg">
         </a>
       </td>
