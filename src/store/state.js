@@ -1,5 +1,5 @@
 /**
- * Created by ADMIN on 04.02.2018.
+ * Created by Maharramoff on 04.02.2018.
  */
 export const state = {
     appTitle: 'Kod paylaşımı proqramı',

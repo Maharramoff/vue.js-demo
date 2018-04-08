@@ -1,5 +1,5 @@
 /**
- * Created by ADMIN on 04.02.2018.
+ * Created by Maharramoff on 04.02.2018.
  */
 var history = require('connect-history-api-fallback');
 const express = require('express');
