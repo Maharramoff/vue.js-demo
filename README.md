@@ -13,7 +13,7 @@ Check a live Demo here https://vue-demo-aze.herokuapp.com/
     <tr>
       <td align="center" valign="middle">
         <a href="https://vuejs.org" target="_blank">
-          <img width="64px" src="https://vuejs.org/images/logo.png">
+          <img width="64px" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/vue/vue.png">
         </a>
       </td>
       <td align="center" valign="middle">
