@@ -36,6 +36,19 @@ Check a live Demo here https://vue-demo-aze.herokuapp.com/
   </tbody>
 </table>
 
+#### Initialize Firebase
+⚠️ Be sure to set your Firebase connection at `/src/config.js`. 
+```javascript
+  var config = {
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
+  };
+```
+For details check out the [Documentation](https://firebase.google.com/docs/web/setup?authuser=0)
+
 #### Build Setup
 
 ``` bash
