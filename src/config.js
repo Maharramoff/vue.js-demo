@@ -8,7 +8,7 @@ const firebaseConfig = {
     storageBucket    : "gkeep-aze.appspot.com",
     messagingSenderId: "946883729600"
 };
-
+// ...
 const appConfig = {
     defaultLang: "az"
 };
