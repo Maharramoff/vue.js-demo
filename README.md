@@ -9,30 +9,29 @@
   <a href="https://saucelabs.com/u/vuejs"><img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status"></a>
 </p>
 
-<h4 align="center">Based on</h4>
-<!--gold start-->
+<h4>Based on</h4>
 <table>
   <tbody>
     <tr>
       <td align="center" valign="middle">
         <a href="https://laravel.com" target="_blank">
-          <img width="246.6px" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/firebase/firebase.png">
+          <img width="64px" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/firebase/firebase.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://htmlburger.com" target="_blank">
-          <img width="246.6px" src="https://raw.githubusercontent.com/github/explore/fd96fceccf8c42c99cbe29cf0f8dcc4736fcb85a/topics/nodejs/nodejs.png">
+          <img width="64px" src="https://raw.githubusercontent.com/github/explore/fd96fceccf8c42c99cbe29cf0f8dcc4736fcb85a/topics/nodejs/nodejs.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://chaitin.cn/en/" target="_blank">
-          <img width="246.6px" src="https://vuetifyjs.com/static/doc-images/logo.svg">
+          <img width="64px" src="https://vuetifyjs.com/static/doc-images/logo.svg">
         </a>
       </td>
     </tr>
+    <tr><td></td><td></td><td></td></tr>
   </tbody>
 </table>
-<!--gold end-->
 
 
 ## Build Setup
