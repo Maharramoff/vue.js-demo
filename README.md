@@ -4,8 +4,7 @@
 #### A Simple Vue 2 + 🔥 Firebase Boilerplate
 #### Work in progress 🔥
 
-<p><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://vuejs.org/images/logo.png" alt="Vue logo"></a></p>
-
+#### Supported Browsers
 <p>
   <a href="https://saucelabs.com/u/vuejs"><img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status"></a>
 </p>
@@ -14,6 +13,11 @@
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="middle">
+        <a href="https://vuejs.org" target="_blank">
+          <img width="64px" src="https://vuejs.org/images/logo.png">
+        </a>
+      </td>
       <td align="center" valign="middle">
         <a href="https://firebase.google.com" target="_blank">
           <img width="64px" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/firebase/firebase.png">
@@ -30,7 +34,7 @@
         </a>
       </td>
     </tr>
-    <tr><td>Firebase</td><td>Node.js</td><td>Vuetify</td></tr>
+    <tr><td>Vue.js</td><td>Firebase</td><td>Node.js</td><td>Vuetify</td></tr>
   </tbody>
 </table>
 
