@@ -18,7 +18,11 @@
                                 id="email"
                                 type="email"
                                 v-model="email"
-                                required></v-text-field>
+                                :error-messages="emailErrors"
+                                @input="$v.email.$touch()"
+                                @blur="$v.email.$touch()"
+                                required>
+                        </v-text-field>
                     </v-flex>
                     <v-flex>
                         <v-text-field
@@ -27,7 +31,11 @@
                                 id="password"
                                 type="password"
                                 v-model="password"
-                                required></v-text-field>
+                                :error-messages="passwordErrors"
+                                @input="$v.password.$touch()"
+                                @blur="$v.password.$touch()"
+                                required>
+                        </v-text-field>
                     </v-flex>
                     <v-flex class="text-xs-center" mt-5>
                         <v-btn
@@ -46,7 +54,14 @@
 </template>
 
 <script>
+    import {validationMixin} from 'vuelidate'
+    import {required, email} from 'vuelidate/lib/validators'
     export default {
+        mixins     : [validationMixin],
+        validations: {
+            email   : {required, email},
+            password: required
+        },
         data () {
             return {
                 email   : '',
@@ -57,35 +72,49 @@
                 loading2: false,
             }
         },
-        computed: {
+        computed   : {
             error () {
                 return this.$store.getters.getError
             },
             loading () {
                 return this.$store.getters.getLoading
+            },
+            emailErrors()
+            {
+                const errors = []
+                if (!this.$v.email.$dirty) return errors
+                !this.$v.email.email && errors.push(this.$lang.msg.valid_email_error)
+                !this.$v.email.required && errors.push(this.$lang.msg.empty_email_error)
+                return errors
+            },
+            passwordErrors()
+            {
+                const errors = []
+                if (!this.$v.password.$dirty) return errors
+                !this.$v.password.required && errors.push(this.$lang.msg.empty_password_error)
+                return errors
             }
         },
-        watch   : {
-            error (value) {
-                if (value)
-                {
-                    this.alert = true
-                }
+        watch      : {
+            error (value)
+            {
+                this.alert = value || false
             },
             alert (value) {
                 if (!value)
                 {
-                    //this.$store.dispatch('setError', false)
                     this.loader = null
                 }
             }
         },
-        methods : {
+        methods    : {
             userSignIn () {
+
+                this.$v.$touch()
 
                 this.$store.commit('setLoading', true)
 
-                setTimeout(() => (
+                setTimeout(() = > (
                         this.$store.dispatch('userSignIn', {
                             email   : this.email,
                             password: this.password,

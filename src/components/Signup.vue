@@ -111,7 +111,6 @@
 
                 if (!this.$v.$error)
                 {
-                    // No errors found. Now we can register user
                     this.$store.commit('setLoading', true)
 
                     setTimeout(() => (
@@ -145,8 +144,7 @@
             loading()
             {
                 return this.$store.getters.getLoading
-            }
-            ,
+            },
             nameErrors()
             {
                 const errors = []
@@ -155,8 +153,7 @@
                 !this.$v.name.minLength && errors.push(this.$lang.msg.name_minlen_error)
                 !this.$v.name.required && errors.push(this.$lang.msg.name_is_empty)
                 return errors
-            }
-            ,
+            },
             emailErrors()
             {
                 const errors = []
@@ -164,8 +161,7 @@
                 !this.$v.email.email && errors.push(this.$lang.msg.valid_email_error)
                 !this.$v.email.required && errors.push(this.$lang.msg.empty_email_error)
                 return errors
-            }
-            ,
+            },
             passwordErrors()
             {
                 const errors = []
@@ -174,8 +170,7 @@
                 !this.$v.password.minLength && errors.push(this.$lang.msg.password_minlen_error)
                 !this.$v.password.required && errors.push(this.$lang.msg.empty_password_error)
                 return errors
-            }
-            ,
+            },
             repasswordErrors()
             {
                 const errors = []
@@ -188,13 +183,11 @@
             error(value)
             {
                 this.alert = value || false
-            }
-            ,
+            },
             alert(value)
             {
                 if (!value)
                 {
-                   // this.$store.commit('setError', null)
                     this.loader = null
                 }
 
