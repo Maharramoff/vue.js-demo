@@ -1,8 +1,8 @@
 [ ![Codeship Status for Maharramoff/vue-demo-aze](https://app.codeship.com/projects/3b6d6230-ebc6-0135-a309-3e260d7a1584/status?branch=master)](https://app.codeship.com/projects/270250)
 [ ![Heroku Status for vue-demo-aze](https://heroku-badge.herokuapp.com/?app=vue-demo-aze)](https://vue-demo-aze.herokuapp.com/)
 
-#### A Simple Vue 2 + 🔥 Firebase Boilerplate <img width="16px" valign="middle" src="https://lipis.github.io/flag-icon-css/flags/4x3/az.svg">
-#### Work in progress 🔥 :sunglasses:
+#### A Simple Vue 2 + 🔥 Firebase Boilerplate 
+#### Work in progress 🔥 :sunglasses: <img width="16px" src="https://lipis.github.io/flag-icon-css/flags/4x3/az.svg">
 #### Supported Browsers
 <p>
   <a href="https://saucelabs.com/u/vuejs"><img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status"></a>
