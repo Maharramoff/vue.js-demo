@@ -28,7 +28,7 @@ Check a live Demo here https://vue-demo-aze.herokuapp.com/
       </td>
       <td align="center" valign="middle">
         <a href="https://vuetifyjs.com" target="_blank">
-          <img width="64px" src="https://vuetifyjs.com/static/doc-images/logo.svg">
+          <img width="64px" src="https://cdn.vuetifyjs.com/images/logos/logo.svg">
         </a>
       </td>
     </tr>
